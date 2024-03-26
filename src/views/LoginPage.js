@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuthentication } from '../views/AuthenticationContext';
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const { login } = useAuthentication();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -10,6 +12,7 @@ const LoginPage = () => {
     console.log("Login button clicked");
     try {
       await login(email, password);
+      navigate('/dashboard')
     } catch (error) {
       console.error('Error logging in:', error.message);
     }

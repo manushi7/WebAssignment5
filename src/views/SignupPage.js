@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuthentication } from '../views/AuthenticationContext';
 
 const SignupPage = () => {
+  const navigate = useNavigate();
   const { signup } = useAuthentication();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -10,6 +12,8 @@ const SignupPage = () => {
   const handleSignupClick = async () => {
     try {
       await signup(email, password);
+      // Navigate to another page after signup
+      navigate('/');
     } catch (error) {
       setError(error.message);
     }
