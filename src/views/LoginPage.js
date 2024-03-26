@@ -12,7 +12,7 @@ const LoginPage = () => {
     console.log("Login button clicked");
     try {
       await login(email, password);
-      navigate('/dashboard')
+      navigate('/profile')
     } catch (error) {
       console.error('Error logging in:', error.message);
     }

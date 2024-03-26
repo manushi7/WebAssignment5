@@ -6,7 +6,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     if (!user) {
-      
+      // Handle case when user is not logged in
     }
   }, [user]);
 
@@ -15,8 +15,8 @@ const ProfilePage = () => {
       <h2>Profile</h2>
       {user && (
         <div>
-          <p>Name: {user.name}</p>
           <p>Email: {user.email}</p>
+          {user.displayName && <p>Name: {user.displayName}</p>}
         </div>
       )}
     </div>

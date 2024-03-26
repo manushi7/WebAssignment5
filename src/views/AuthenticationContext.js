@@ -35,11 +35,13 @@ export const AuthenticationProvider = ({ children }) => {
   // Method to signup in user
   const signup = async (email, password) => {
     try {
-      await auth.signInWithEmailAndPassword(email, password);
+      await auth.createUserWithEmailAndPassword(email, password);
     } catch (error) {
       console.error('Error signing in:', error.message);
     }
   };
+
+
 
   
 //   // Method to sign out user
