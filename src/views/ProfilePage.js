@@ -16,7 +16,7 @@ const ProfilePage = () => {
       {user && (
         <div>
           <p>Email: {user.email}</p>
-          {user.displayName && <p>Name: {user.displayName}</p>}
+          {/* {user.displayName && <p>Name: {user.displayName}</p>} */}
         </div>
       )}
     </div>

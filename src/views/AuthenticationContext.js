@@ -27,7 +27,7 @@ export const AuthenticationProvider = ({ children }) => {
   // Method to log in user
   const login = async (email, password) => {
     try {
-      await auth.signInWithEmailAndPassword(email, password);
+      await auth.signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
       console.error('Error signing in:', error.message);
     }
@@ -35,7 +35,7 @@ export const AuthenticationProvider = ({ children }) => {
   // Method to signup in user
   const signup = async (email, password) => {
     try {
-      await auth.createUserWithEmailAndPassword(email, password);
+      await auth.createUserWithEmailAndPassword(auth, email, password);
     } catch (error) {
       console.error('Error signing in:', error.message);
     }
