@@ -1,27 +1,26 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuthentication } from '../views/AuthenticationContext';
+import { useAuthentication } from '../pages/AuthenticationContext';
 
-const SignupPage = () => {
+const LoginPage = () => {
   const navigate = useNavigate();
-  const { signup } = useAuthentication();
+  const { login } = useAuthentication();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
 
-  const handleSignupClick = async () => {
+  const handleLoginClick = async () => {
+    console.log("Login button clicked");
     try {
-      await signup(email, password);
-      // Navigate to another page after signup
-      navigate('/');
+      await login(email, password);
+      navigate('/profile')
     } catch (error) {
-      setError(error.message);
+      console.error('Error logging in:', error.message);
     }
   };
 
   return (
     <div>
-      <h2>Sign Up</h2>
+      <h2>Login</h2>
       <input
         type="email"
         placeholder="Email"
@@ -34,10 +33,9 @@ const SignupPage = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={handleSignupClick}>Sign Up</button>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <button onClick={handleLoginClick}>Login</button>
     </div>
   );
 };
 
-export default SignupPage;
+export default LoginPage;

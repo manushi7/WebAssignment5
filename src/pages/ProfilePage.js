@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useAuthentication } from '../views/AuthenticationContext';
+import { useAuthentication } from '../pages/AuthenticationContext';
 
 const ProfilePage = () => {
   const { user } = useAuthentication();

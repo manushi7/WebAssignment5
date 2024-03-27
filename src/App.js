@@ -1,11 +1,11 @@
 
 import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import { AuthenticationProvider } from './views/AuthenticationContext';
-import DashboardPage from './views/DashboardPage';
-import LoginPage from './views/LoginPage';
-import ProfilePage from './views/ProfilePage';
-import SignupPage from './views/SignupPage';
+import { AuthenticationProvider } from './pages/AuthenticationContext';
+import DashboardPage from './pages/DashboardPage';
+import LoginPage from './pages/LoginPage';
+import ProfilePage from './pages/ProfilePage';
+import SignupPage from './pages/SignupPage';
 
 const App = () => {
   return (
