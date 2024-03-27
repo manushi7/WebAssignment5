@@ -1,6 +1,25 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { auth } from '../firebaseConfig.js';
 
+// AuthContext.js
+import React, { createContext, useContext, useState } from 'react';
+
+const AuthContext = createContext();
+
+export const useAuth = () => useContext(AuthContext);
+
+export const AuthProvider = ({ children }) => {
+  const [authenticated, setAuthenticated] = useState(false);
+
+  const login = () => setAuthenticated(true);
+  const logout = () => setAuthenticated(false);
+
+  return (
+    <AuthContext.Provider value={{ authenticated, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
 
 // Create the authentication context
 const AuthenticationContext = createContext();
@@ -13,6 +32,7 @@ export const AuthenticationProvider = ({ children }) => {
   
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [authenticated, setAuthenticated] = useState(false);
 
 
   useEffect(() => {
@@ -28,6 +48,7 @@ export const AuthenticationProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       await auth.signInWithEmailAndPassword(auth, email, password);
+        setAuthenticated(true)
     } catch (error) {
       console.error('Error signing in:', error.message);
     }
@@ -48,6 +69,8 @@ export const AuthenticationProvider = ({ children }) => {
 //   const logout = async () => {
 //     try {
 //       await auth.signOut();
+
+        // setAuthenticated(false)
 //     } catch (error) {
 //       console.error('Error signing out:', error.message);
 //     }
@@ -56,6 +79,7 @@ export const AuthenticationProvider = ({ children }) => {
   // Value object for the context provider
   const value = {
     user,
+    authenticated,
     loading,
     login,
     signup,
