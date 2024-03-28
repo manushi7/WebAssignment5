@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuthentication } from '../pages/AuthenticationContext';
+import { useAuthentication } from '../context/auth/AuthenticationContext';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -11,8 +11,9 @@ const LoginPage = () => {
   const handleLoginClick = async () => {
     console.log("Login button clicked");
     try {
+        console.log('GGGGGGG', email, password)
       await login(email, password);
-      navigate('/profile')
+      navigate('/');
     } catch (error) {
       console.error('Error logging in:', error.message);
     }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuthentication } from '../pages/AuthenticationContext';
+import { useAuthentication } from '../context/auth/AuthenticationContext';
 
 const SignupPage = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const SignupPage = () => {
     try {
       await signup(email, password);
       // Navigate to another page after signup
-      navigate('/');
+      navigate('/dashboard');
     } catch (error) {
       setError(error.message);
     }
