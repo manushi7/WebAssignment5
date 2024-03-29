@@ -50,7 +50,6 @@ const DashboardPage = () => {
           <CalculatorWidget />
         </div>
       </div>
-      </div>
     </div>
   );
 };
