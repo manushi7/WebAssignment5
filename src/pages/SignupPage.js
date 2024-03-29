@@ -1,13 +1,13 @@
-// LoginPage.js
+// SignupPage.js
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuthentication } from '../views/AuthenticationContext';
-import '../views/css/Login.css'; // Import the CSS file
+import { useAuthentication } from '../context/auth/AuthenticationContext';
+import './css/Signup.css'; // Import the CSS file
 
-const LoginPage = () => {
+const SignupPage = () => {
   const navigate = useNavigate();
-  const { login } = useAuthentication();
+  const { signup } = useAuthentication();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -21,7 +21,7 @@ const LoginPage = () => {
     return password.length >= 6;
   };
 
-  const handleLoginClick = async () => {
+  const handleSignupClick = async () => {
     if (!validateEmail(email)) {
       setError('Invalid email address');
       return;
@@ -33,16 +33,17 @@ const LoginPage = () => {
     }
 
     try {
-      await login(email, password);
-      navigate('/profile');
+      await signup(email, password);
+      // Navigate to another page after signup
+      navigate('/');
     } catch (error) {
-      setError('Error logging in: ' + error.message);
+      setError(error.message);
     }
   };
 
   return (
-    <div className="login-container">
-      <h2>Login</h2>
+    <div className="signup-container">
+      <h2>Sign Up</h2>
       <input
         type="email"
         placeholder="Email"
@@ -55,10 +56,10 @@ const LoginPage = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={handleLoginClick}>Login</button>
+      <button onClick={handleSignupClick}>Sign Up</button>
       {error && <p className="error-message">{error}</p>}
     </div>
   );
 };
 
-export default LoginPage;
+export default SignupPage;

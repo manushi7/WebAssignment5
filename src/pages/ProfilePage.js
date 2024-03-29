@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useAuthentication } from '../views/AuthenticationContext';
+import { useAuthentication } from '../context/auth/AuthenticationContext';
 
 const ProfilePage = () => {
   const { user } = useAuthentication();
@@ -17,6 +17,14 @@ const ProfilePage = () => {
         <div>
           <p>Email: {user.email}</p>
           {/* {user.displayName && <p>Name: {user.displayName}</p>} */}
+        <ul>
+          <li>Email: manushi@gmail.com</li>
+          <li>Name: Manushi Khadka</li>
+          <li>Role: Administrator</li>
+          <li>Joined Date: January 1, 2023</li>
+          <li>Last Login: March 15, 2023</li>
+          <li>Status: Active</li>
+        </ul>
         </div>
       )}
     </div>
