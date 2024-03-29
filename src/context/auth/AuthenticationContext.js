@@ -1,7 +1,5 @@
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { initializeApp } from 'firebase/app';
-import { firebaseConfig } from '../../firebaseConfig.js';
 
 // Create the authentication context
 const AuthenticationContext = createContext();
@@ -29,9 +27,10 @@ export const AuthenticationProvider = ({ children }) => {
         const auth = getAuth();
 
         try {
-            await signInWithEmailAndPassword(auth, email, password);
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            setUser(userCredential.user);
         } catch (error) {
-            console.error('Error signing in:', error.message);
+            throw new Error('Invalid email or password');
         }
     };
     // Method to signup in user
