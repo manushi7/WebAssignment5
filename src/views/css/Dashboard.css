@@ -1,0 +1,59 @@
+/* views/css/Dashboard.css */
+
+/* Navigation Bar */
+.navbar {
+    background-color: #039be5;
+  }
+  
+  .navbar-brand {
+    color: #fff;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #fff;
+  }
+  
+  /* Main Content */
+  .main-content {
+    padding-top: 48px;
+    padding-left: 20px;
+  }
+  
+  /* Page Title */
+  .page-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #202124;
+  }
+  
+  /* Container Cards */
+  .card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Card Title */
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Card Content */
+  .card-text {
+    color: #5f6368;
+  }
+  
+  /* Read More Button */
+  .btn-primary {
+    background-color: #1a73e8;
+    border-color: #1a73e8;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0d47a1;
+    border-color: #0d47a1;
+  }
+  
