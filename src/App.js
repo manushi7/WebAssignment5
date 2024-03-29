@@ -11,6 +11,7 @@ import DashboardPage from './pages/DashboardPage';
 import LoginPage from './pages/LoginPage';
 import ProfilePage from './pages/ProfilePage';
 import SignupPage from './pages/SignupPage';
+import UserListingPage from './pages/UserListingPage';
 
 const App = () => {
     return (
@@ -33,6 +34,14 @@ const App = () => {
                   element={
                       <RequireAuth>
                         <ProfilePage />
+                      </RequireAuth>
+                  }
+              />
+              <Route
+                  path="/users"
+                  element={
+                      <RequireAuth>
+                        <UserListingPage />
                       </RequireAuth>
                   }
               />
