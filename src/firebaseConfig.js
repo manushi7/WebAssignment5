@@ -1,5 +1,3 @@
-import { initializeApp } from 'firebase/app';
-
 const firebaseConfig = {
     apiKey: "AIzaSyADGTBWgqt54a7c9coPHQfydQwr_0Ygyck",
     authDomain: "react-authentication-app-babf5.firebaseapp.com",
@@ -10,4 +8,7 @@ const firebaseConfig = {
     measurementId: "G-CVLS03S6NF"
 };
 
+
+
 export { firebaseConfig };
+

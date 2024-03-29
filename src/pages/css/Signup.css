@@ -18,7 +18,8 @@
     margin-bottom: 20px;
     text-align: center;
   }
-  
+  .signup-container input[type="tel"],
+  .signup-container input[type="name"],
   .signup-container input[type="email"],
   .signup-container input[type="password"] {
     width: 100%;

@@ -30,7 +30,9 @@ export const AuthenticationProvider = ({ children }) => {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             setUser(userCredential.user);
         } catch (error) {
-            throw new Error('Invalid email or password');
+            console.log(error)
+            throw new Error(error);
+            
         }
     };
     // Method to signup in user
