@@ -10,6 +10,7 @@ export const signUpUser = async (email, password, fullName, phoneNumber) => {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
         const userData = {
+            id: auth.currentUser.uid,
             displayName: fullName,
             phoneNumber: phoneNumber,
             email: email,
