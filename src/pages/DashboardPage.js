@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../pages/css/Dashboard.css'; // Import the CSS file
 import WeatherWidget from '../components/WeatherWidget';
+import CalculatorWidget from '../components/CalculatorWidget';
 
 const DashboardPage = () => {
   return (
@@ -33,7 +34,7 @@ const DashboardPage = () => {
 
         {/* Container Cards */}
         <div className="row">
-            <WeatherWidget />
+            <CalculatorWidget />
           <div className="col-md-4">
             <div className="card mb-4">
               <div className="card-body">
