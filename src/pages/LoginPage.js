@@ -33,10 +33,11 @@ const LoginPage = () => {
     }
 
     try {
-      await login(email, password);
+      await login( email, password);
       navigate('/profile');
     } catch (error) {
-      setError('Error logging in: ' + error.message);
+      setError('incorrect email or password');
+      console.error('Error logging in:', error.message);
     }
   };
 

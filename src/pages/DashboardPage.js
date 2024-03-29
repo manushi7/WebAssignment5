@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../pages/css/Dashboard.css'; // Import the CSS file
 import WeatherWidget from '../components/WeatherWidget';
+import DogWidget from '../components/DogWidget';
+import ParkWidget from '../components/ParkWidget';
 import CalculatorWidget from '../components/CalculatorWidget';
-import CalendarWidget from '../components/CalendarWidget';
 
 const DashboardPage = () => {
   return (
@@ -35,34 +36,20 @@ const DashboardPage = () => {
 
         {/* Container Cards */}
         <div className="row">
-            <WeatherWidget />
-          <div className="col-md-4">
-            <div className="card mb-4">
-              <div className="card-body">
-                <h5 className="card-title">First Container</h5>
-                <p className="card-text">This is the content of the first container.</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="card mb-4">
-              <div className="card-body">
-                <h5 className="card-title">Second Container</h5>
-                {/* <p className="card-text">This is the content of the second container.</p> */}
-                <CalculatorWidget />
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="card mb-4">
-              <div className="card-body">
-                <h5 className="card-title">Third Container</h5>
-                {/* <p className="card-text">This is the content of the third container.</p> */}
-                <CalendarWidget />
-              </div>
-            </div>
-          </div>
+      <div className="col">
+          <WeatherWidget />
+      </div>
+      <div className="col">
+          <DogWidget />
+      </div>
+      <div className="col">
+          <ParkWidget />
         </div>
+      </div>
+      <div className="col">
+          <CalculatorWidget />
+        </div>
+      </div>
       </div>
     </div>
   );

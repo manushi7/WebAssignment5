@@ -1,0 +1,28 @@
+.widget-container {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.widget-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.card {
+  border: none;
+  background-color: #f8f9fa; /* Bootstrap background color */
+}
+
+.card-body {
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+}
