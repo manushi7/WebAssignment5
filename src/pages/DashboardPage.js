@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../pages/css/Dashboard.css'; // Import the CSS file
 import WeatherWidget from '../components/WeatherWidget';
 import CalculatorWidget from '../components/CalculatorWidget';
+import CalendarWidget from '../components/CalendarWidget';
 
 const DashboardPage = () => {
   return (
@@ -34,7 +35,7 @@ const DashboardPage = () => {
 
         {/* Container Cards */}
         <div className="row">
-            <CalculatorWidget />
+            <WeatherWidget />
           <div className="col-md-4">
             <div className="card mb-4">
               <div className="card-body">
@@ -47,7 +48,8 @@ const DashboardPage = () => {
             <div className="card mb-4">
               <div className="card-body">
                 <h5 className="card-title">Second Container</h5>
-                <p className="card-text">This is the content of the second container.</p>
+                {/* <p className="card-text">This is the content of the second container.</p> */}
+                <CalculatorWidget />
               </div>
             </div>
           </div>
@@ -55,7 +57,8 @@ const DashboardPage = () => {
             <div className="card mb-4">
               <div className="card-body">
                 <h5 className="card-title">Third Container</h5>
-                <p className="card-text">This is the content of the third container.</p>
+                {/* <p className="card-text">This is the content of the third container.</p> */}
+                <CalendarWidget />
               </div>
             </div>
           </div>
