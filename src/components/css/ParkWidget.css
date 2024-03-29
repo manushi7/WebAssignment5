@@ -1,23 +1,28 @@
-.widget-container {
+.park--widget-container {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.widget-title {
+.park--widget-title {
   font-size: 24px;
   margin-bottom: 20px;
   text-align: center;
 }
 
-.input-group {
+.park--input-group {
   margin-bottom: 20px;
 }
 
-.card {
+.park--card {
   border: none;
+  background-color: #f8f9fa; /* Bootstrap background color */
 }
 
-.error-message {
+.park--card-body {
+  text-align: left;
+}
+
+.park--error-message {
   color: red;
 }
