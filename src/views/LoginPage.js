@@ -1,25 +1,47 @@
+// LoginPage.js
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthentication } from '../views/AuthenticationContext';
+import '../views/css/Login.css'; // Import the CSS file
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const { login } = useAuthentication();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  const validatePassword = (password) => {
+    return password.length >= 6;
+  };
 
   const handleLoginClick = async () => {
-    console.log("Login button clicked");
+    if (!validateEmail(email)) {
+      setError('Invalid email address');
+      return;
+    }
+
+    if (!validatePassword(password)) {
+      setError('Password must be at least 6 characters long');
+      return;
+    }
+
     try {
       await login(email, password);
-      navigate('/profile')
+      navigate('/profile');
     } catch (error) {
-      console.error('Error logging in:', error.message);
+      setError('Error logging in: ' + error.message);
     }
   };
 
   return (
-    <div>
+    <div className="login-container">
       <h2>Login</h2>
       <input
         type="email"
@@ -34,6 +56,7 @@ const LoginPage = () => {
         onChange={(e) => setPassword(e.target.value)}
       />
       <button onClick={handleLoginClick}>Login</button>
+      {error && <p className="error-message">{error}</p>}
     </div>
   );
 };
