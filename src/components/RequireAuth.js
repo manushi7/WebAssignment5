@@ -1,8 +1,14 @@
 import * as React from "react";
 import {
+    Routes,
+    Route,
+    Link,
+    useNavigate,
+    useLocation,
     Navigate,
-    useLocation
+    Outlet,
 } from "react-router-dom";
+import { getAuth } from "firebase/auth";
 
 import { useAuthentication } from '../context/auth/AuthenticationContext';
 
@@ -15,7 +21,7 @@ export default function RequireAuth({ children }) {
         // trying to go to when they were redirected. This allows us to send them
         // along to that page after they login, which is a nicer user experience
         // than dropping them off on the home page.
-        return <Navigate to="/" state={{ from: location }} replace />;
+        return <Navigate to="/login" state={{ from: location }} replace />;
     }
 
     return children;
