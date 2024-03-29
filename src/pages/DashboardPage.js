@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../pages/css/Dashboard.css'; // Import the CSS file
 import WeatherWidget from '../components/WeatherWidget';
+import DogWidget from '../components/DogWidget';
 
 const DashboardPage = () => {
   return (
@@ -33,23 +34,11 @@ const DashboardPage = () => {
 
         {/* Container Cards */}
         <div className="row">
-            <WeatherWidget />
-          <div className="col-md-4">
-            <div className="card mb-4">
-              <div className="card-body">
-                <h5 className="card-title">First Container</h5>
-                <p className="card-text">This is the content of the first container.</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="card mb-4">
-              <div className="card-body">
-                <h5 className="card-title">Second Container</h5>
-                <p className="card-text">This is the content of the second container.</p>
-              </div>
-            </div>
-          </div>
+          <WeatherWidget />
+          <DogWidget />
+
+          
+
           <div className="col-md-4">
             <div className="card mb-4">
               <div className="card-body">
