@@ -5,6 +5,7 @@ import WeatherWidget from '../components/WeatherWidget';
 import DogWidget from '../components/DogWidget';
 import ParkWidget from '../components/ParkWidget';
 import CalculatorWidget from '../components/CalculatorWidget';
+import CalendarWidget from '../components/CalendarWidget';
 
 const DashboardPage = () => {
   return (
@@ -48,6 +49,9 @@ const DashboardPage = () => {
       </div>
       <div className="col">
           <CalculatorWidget />
+        </div>
+      <div className="col">
+          <CalendarWidget />
         </div>
       </div>
     </div>
