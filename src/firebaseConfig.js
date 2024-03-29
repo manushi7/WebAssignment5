@@ -1,3 +1,5 @@
+import { initializeApp } from 'firebase/app';
+
 const firebaseConfig = {
     apiKey: "AIzaSyADGTBWgqt54a7c9coPHQfydQwr_0Ygyck",
     authDomain: "react-authentication-app-babf5.firebaseapp.com",
@@ -9,6 +11,7 @@ const firebaseConfig = {
 };
 
 
+const app = initializeApp(firebaseConfig);
 
-export { firebaseConfig };
+export { firebaseConfig, app };
 

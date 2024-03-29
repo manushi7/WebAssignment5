@@ -12,10 +12,6 @@ import LoginPage from './pages/LoginPage';
 import ProfilePage from './pages/ProfilePage';
 import SignupPage from './pages/SignupPage';
 
-import { firebaseConfig } from './firebaseConfig';
-
-initializeApp(firebaseConfig);
-
 const App = () => {
     return (
         <AuthenticationProvider>

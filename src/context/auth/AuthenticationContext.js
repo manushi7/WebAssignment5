@@ -1,5 +1,6 @@
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from 'react';
+import { signUpUser } from '../../services/authService';
 
 // Create the authentication context
 const AuthenticationContext = createContext();
@@ -45,9 +46,6 @@ export const AuthenticationProvider = ({ children }) => {
             console.error('Error signing in:', error.message);
         }
     };
-
-
-
     
     //   // Method to sign out user
     //   const logout = async () => {
@@ -66,7 +64,7 @@ export const AuthenticationProvider = ({ children }) => {
         user,
         loading,
         login,
-        signup,
+        signup: signUpUser,
         // logout,
     };
 
