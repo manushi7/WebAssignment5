@@ -12,10 +12,10 @@ export const signUpUser = async (email, password, fullName, phoneNumber) => {
         const userData = {
             displayName: fullName,
             phoneNumber: phoneNumber,
+            email: email,
             // Add more fields as needed
         };
 
-        console.log('AAA', auth.currentUser)
         await setDoc(doc(db, "users", auth.currentUser.uid), userData);
 
         return true;
