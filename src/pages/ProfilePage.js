@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useAuthentication } from '../context/auth/AuthenticationContext';
+import CalendarWidget from '../components/CalendarWidget';
 
 const ProfilePage = () => {
   const { user } = useAuthentication();
@@ -15,6 +16,7 @@ const ProfilePage = () => {
       <h2>Profile</h2>
       {user && (
         <div>
+          <CalendarWidget />
           <p>Email: {user.email}</p>
           {/* {user.displayName && <p>Name: {user.displayName}</p>} */}
         <ul>

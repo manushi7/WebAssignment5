@@ -1,5 +1,6 @@
 @import "./pages/css/Calculator.css";
 @import "./pages/css/Calendar.css";
+@import "./pages/css/Sidebar.css";
 
 body {
   margin: 0;

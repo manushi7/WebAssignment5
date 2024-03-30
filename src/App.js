@@ -12,6 +12,8 @@ import LoginPage from './pages/LoginPage';
 import ProfilePage from './pages/ProfilePage';
 import SignupPage from './pages/SignupPage';
 import UserListingPage from './pages/UserListingPage';
+import CalendarWidget from './components/CalendarWidget';
+import CalculatorWidget from './components/CalculatorWidget';
 
 const App = () => {
     return (
@@ -45,6 +47,9 @@ const App = () => {
                       </RequireAuth>
                   }
               />
+
+            <Route path="/calendar" element={<CalendarWidget />} />
+            <Route path="/calculator" element={<CalculatorWidget />} />
           </Route>
           </Routes>
         </Router>

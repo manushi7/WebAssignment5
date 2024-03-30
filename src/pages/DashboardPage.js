@@ -1,11 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../pages/css/Dashboard.css'; // Import the CSS file
-import WeatherWidget from '../components/WeatherWidget';
-import DogWidget from '../components/DogWidget';
-import ParkWidget from '../components/ParkWidget';
-import CalculatorWidget from '../components/CalculatorWidget';
-import CalendarWidget from '../components/CalendarWidget';
+import Sidebar from '../components/Sidebar';
 
 const DashboardPage = () => {
     return (
@@ -30,30 +26,7 @@ const DashboardPage = () => {
             </div>
           </nav>
 
-          {/* Main Content */}
-          <div className="container-fluid main-content">
-            {/* Page Title */}
-            <h1 className="page-title">Dashboard</h1>
-
-            {/* Container Cards */}
-            <div className="row">
-              <div className="col">
-                <WeatherWidget />
-              </div>
-              <div className="col">
-                <DogWidget />
-              </div>
-              <div className="col">
-                <ParkWidget />
-              </div>
-            </div>
-            <div className="col">
-              <CalculatorWidget />
-            </div>
-            <div className="col">
-              <CalendarWidget />
-            </div>
-          </div>
+          <Sidebar />
         </div>
     );
 };
