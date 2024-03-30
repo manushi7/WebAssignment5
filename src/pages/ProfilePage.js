@@ -12,7 +12,7 @@ const ProfilePage = () => {
     }, [user]);
 
     return (
-        <Container className="mt-5">
+        <div className="content">
           <h1 className="page-title">Profile</h1>
 
           <div className="row">
@@ -20,17 +20,11 @@ const ProfilePage = () => {
               {user && (
                   <div>
                     <p>Email: {user.email}</p>
-                    <ul>
-                      <li>Role: Administrator</li>
-                      <li>Joined Date: March 25, 2023</li>
-                      <li>Last Login: March 29, 2023</li>
-                      <li>Status: Active</li>
-                    </ul>
                   </div>
               )}
             </div>
           </div>
-        </Container>
+          </div>
     );
 };
 
