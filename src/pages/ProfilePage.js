@@ -20,12 +20,10 @@ const ProfilePage = () => {
               {user && (
                   <div>
                     <p>Email: {user.email}</p>
-                    {/* {user.displayName && <p>Name: {user.displayName}</p>} */}
                     <ul>
-                      <li>Name: Manushi Khadka</li>
                       <li>Role: Administrator</li>
-                      <li>Joined Date: January 1, 2023</li>
-                      <li>Last Login: March 15, 2023</li>
+                      <li>Joined Date: March 25, 2023</li>
+                      <li>Last Login: March 29, 2023</li>
                       <li>Status: Active</li>
                     </ul>
                   </div>
