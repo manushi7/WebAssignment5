@@ -14,6 +14,8 @@ import SignupPage from './pages/SignupPage';
 import UserListingPage from './pages/UserListingPage';
 import CalendarPage from './pages/CalendarPage';
 import CalculatorPage from './pages/CalculatorPage';
+import WeatherPage from './pages/WeatherPage';
+import TodoListPage from './pages/TodoListPage';
 
 const App = () => {
     return (
@@ -56,6 +58,18 @@ const App = () => {
                 <Route path="/calculator" element={
                     <RequireAuth>
                       <CalculatorPage />
+                    </RequireAuth>
+                } />
+
+                <Route path="/things-to-do" element={
+                    <RequireAuth>
+                      <TodoListPage />
+                    </RequireAuth>
+                } />
+
+                <Route path="/weather" element={
+                    <RequireAuth>
+                      <WeatherPage />
                     </RequireAuth>
                 } />
               </Route>

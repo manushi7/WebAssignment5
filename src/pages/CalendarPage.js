@@ -6,15 +6,20 @@ import CalendarWidget from '../components/CalendarWidget';
 
 const CalendarPage = () => {
     return (
-        <Container className="mt-5">
-          <h1 className="page-title">Calendar</h1>
+        // <div class="content">
+        //     <div className="container-fluid main-content">
+        //         <h1 className="page-title">Calendar</h1>
 
-          <div className="row">
-            <div className="col">
-              <CalendarWidget />
-            </div>
-          </div>
-        </Container>
+        //         <div className="row">
+        //             <div className="col">
+        //                 <CalendarWidget />
+        //             </div>
+        //         </div>
+        //     </div>
+        // </div>
+        <div class="content">
+            <CalendarWidget />    
+        </div>
     );
 };
 
