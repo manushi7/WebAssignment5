@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Container, Button, Card } from 'react-bootstrap';
 
 const CalendarWidget = () => {
     // State variable to store the current date
@@ -49,21 +50,30 @@ const CalendarWidget = () => {
     };
 
     return (
-        <div className="calendar-widget">
-        <div className="header">
-            <button className="button-text" onClick={handlePrevMonth}>Previous</button>
-            <h3>
-                {currentDate.toLocaleString(
-                    'default', 
-                    { month: 'long', year: 'numeric' }
-                )}
-            </h3>
-            <button className="button-text" onClick={handleNextMonth}>Next</button>
-        </div>
-        <div className="calendar">
-            {renderCalendarGrid()}
-        </div>
-        </div>
+        <Container className="widget-container mt-5">
+            <h2 className="widget-title text-center">Calendar Widget</h2>
+            <Card>
+                <Card.Body>
+                    <div className="row">
+                        <div className="calendar-widget">
+                            <div className="header">
+                                <button className="button-text" onClick={handlePrevMonth}>Previous</button>
+                                <h3>
+                                    {currentDate.toLocaleString(
+                                        'default', 
+                                        { month: 'long', year: 'numeric' }
+                                    )}
+                                </h3>
+                                <button className="button-text" onClick={handleNextMonth}>Next</button>
+                            </div>
+                            <div className="calendar">
+                                {renderCalendarGrid()}
+                            </div>
+                        </div>
+                    </div>
+                </Card.Body>
+            </Card>
+        </Container>
     );
 };
 

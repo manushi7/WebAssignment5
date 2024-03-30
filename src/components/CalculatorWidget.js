@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Container, Card } from 'react-bootstrap';
 
 const CalculatorWidget = () => {
     const [displayValue, setDisplayValue] = useState('0');
@@ -60,27 +61,36 @@ const CalculatorWidget = () => {
     };
 
     return (
-        <div className="calculator-widget">
-            <input type="text" value={displayValue} readOnly />
-            <div className="buttons">
-                <button onClick={() => onNumberButtonClick('7')}>7</button>
-                <button onClick={() => onNumberButtonClick('8')}>8</button>
-                <button onClick={() => onNumberButtonClick('9')}>9</button>
-                <button className="button-operand-text" onClick={() => onOperatorButtonClick('+')}>+</button>
-                <button onClick={() => onNumberButtonClick('4')}>4</button>
-                <button onClick={() => onNumberButtonClick('5')}>5</button>
-                <button onClick={() => onNumberButtonClick('6')}>6</button>
-                <button className="button-operand-text" onClick={() => onOperatorButtonClick('-')}>-</button>
-                <button onClick={() => onNumberButtonClick('1')}>1</button>
-                <button onClick={() => onNumberButtonClick('2')}>2</button>
-                <button onClick={() => onNumberButtonClick('3')}>3</button>
-                <button className="button-operand-text" onClick={() => onOperatorButtonClick('*')}>*</button>
-                <button onClick={() => onNumberButtonClick('0')}>0</button>
-                <button className="button-operand" onClick={onClearButtonClick}>C</button>
-                <button onClick={onEqualsButtonClick}>=</button>
-                <button className="button-operand-text" onClick={() => onOperatorButtonClick('/')}>/</button>
-            </div>
-        </div>
+        <Container className="widget-container mt-5">
+            <h2 className="widget-title text-center">Calculator Widget</h2>
+            <Card>
+                <Card.Body>
+                    <div className="row">
+                        <div className="calculator-widget">
+                            <input type="text" value={displayValue} readOnly />
+                            <div className="buttons">
+                                <button onClick={() => onNumberButtonClick('7')}>7</button>
+                                <button onClick={() => onNumberButtonClick('8')}>8</button>
+                                <button onClick={() => onNumberButtonClick('9')}>9</button>
+                                <button className="button-operand-text" onClick={() => onOperatorButtonClick('+')}>+</button>
+                                <button onClick={() => onNumberButtonClick('4')}>4</button>
+                                <button onClick={() => onNumberButtonClick('5')}>5</button>
+                                <button onClick={() => onNumberButtonClick('6')}>6</button>
+                                <button className="button-operand-text" onClick={() => onOperatorButtonClick('-')}>-</button>
+                                <button onClick={() => onNumberButtonClick('1')}>1</button>
+                                <button onClick={() => onNumberButtonClick('2')}>2</button>
+                                <button onClick={() => onNumberButtonClick('3')}>3</button>
+                                <button className="button-operand-text" onClick={() => onOperatorButtonClick('*')}>*</button>
+                                <button onClick={() => onNumberButtonClick('0')}>0</button>
+                                <button className="button-operand" onClick={onClearButtonClick}>C</button>
+                                <button onClick={onEqualsButtonClick}>=</button>
+                                <button className="button-operand-text" onClick={() => onOperatorButtonClick('/')}>/</button>
+                            </div>
+                        </div>
+                    </div>
+                </Card.Body>
+              </Card>
+        </Container>
     );
 };
 
