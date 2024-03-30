@@ -33,7 +33,7 @@ const LoginPage = () => {
     }
 
     try {
-      await login( email, password);
+      await login(email, password);
       navigate('/');
     } catch (error) {
       setError('incorrect email or password');

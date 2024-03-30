@@ -18,9 +18,7 @@ function Sidebar() {
           <Link className="nav-link" to="/weather">Weather</Link>
           <Link className="nav-link" to="/profile">Profile</Link>
           <Link className="nav-link" to="/users">Users</Link>
-          <div className="nav-item">
-            <button className="btn btn-link" onClick={signOutUser}>Log Out</button>
-          </div>
+          <Link className="nav-link" to="/login">LogOut</Link>
         </div>
     );
 };
