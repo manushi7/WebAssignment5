@@ -12,47 +12,55 @@ import LoginPage from './pages/LoginPage';
 import ProfilePage from './pages/ProfilePage';
 import SignupPage from './pages/SignupPage';
 import UserListingPage from './pages/UserListingPage';
-import CalendarWidget from './components/CalendarWidget';
-import CalculatorWidget from './components/CalculatorWidget';
+import CalendarPage from './pages/CalendarPage';
+import CalculatorPage from './pages/CalculatorPage';
 
 const App = () => {
     return (
         <AuthenticationProvider>
           <Router>
-          <Routes>
-            <Route element={<Layout />}>
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/signup" element={<SignupPage />} />
-              <Route
-                  path="/"
-                  element={
-                      <RequireAuth>
-                        <DashboardPage />
-                      </RequireAuth>
-                  }
-              />
-              <Route
-                  path="/profile"
-                  element={
-                      <RequireAuth>
-                        <ProfilePage />
-                      </RequireAuth>
-                  }
-              />
-              <Route
-                  path="/users"
-                  element={
-                      <RequireAuth>
-                        <UserListingPage />
-                      </RequireAuth>
-                  }
-              />
+            <Routes>
+              <Route element={<Layout />}>
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/signup" element={<SignupPage />} />
+                <Route
+                    path="/"
+                    element={
+                        <RequireAuth>
+                          <DashboardPage />
+                        </RequireAuth>
+                    }
+                />
+                <Route
+                    path="/profile"
+                    element={
+                        <RequireAuth>
+                          <ProfilePage />
+                        </RequireAuth>
+                    }
+                />
+                <Route
+                    path="/users"
+                    element={
+                        <RequireAuth>
+                          <UserListingPage />
+                        </RequireAuth>
+                    }
+                />
 
-            <Route path="/calendar" element={<CalendarWidget />} />
-            <Route path="/calculator" element={<CalculatorWidget />} />
-          </Route>
-          </Routes>
-        </Router>
+                <Route path="/calendar" element={
+                    <RequireAuth>
+                      <CalendarPage />
+                    </RequireAuth>
+                } />
+                <Route path="/calculator" element={
+                    <RequireAuth>
+                      <CalculatorPage />
+                    </RequireAuth>
+                } />
+              </Route>
+            </Routes>
+          </Router>
         </AuthenticationProvider>
 
     );

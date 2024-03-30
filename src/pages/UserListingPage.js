@@ -23,7 +23,7 @@ export default function UserListingPage() {
                     const user = doc.data()
 
                     newUsers = [...newUsers, user]
-                        // doc.data() is never undefined for query doc snapshots
+                    // doc.data() is never undefined for query doc snapshots
                 });
 
                 setUsers(newUsers);
@@ -37,15 +37,15 @@ export default function UserListingPage() {
     }, []);
 
     return (
-        <Container className="mt-5">
-          <h2 className="text-center">User Listing</h2>
-          <div className="row">
-            <div className="col">
-              <div className="user-card-container mt-5">
-                {loading ? (
-                    <p>Loading...</p>
-                ) : (
-                    users.map(user => (
+        <div className="container-fluid main-content">
+          <h1 className="page-title">User Listing</h1>
+          <div>
+            {loading ? (
+                <p>Loading...</p>
+            ) : (
+                users.map(user => (
+                    <div className="row">
+                      <div className="col">
                         <Card key={user.id} className="user-card">
                           <Card.Body>
                             <Card.Title>{user.displayName}</Card.Title>
@@ -53,11 +53,11 @@ export default function UserListingPage() {
                             <Card.Text>Phone Number: {user.phoneNumber}</Card.Text>
                           </Card.Body>
                         </Card>
-                    ))
-                )}
-              </div>
-            </div>
+                      </div>
+                    </div>
+                ))
+            )}
           </div>
-        </Container>
+        </div>
     );
 };
