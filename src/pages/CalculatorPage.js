@@ -1,21 +1,20 @@
 import React from 'react';
+import { Container, Card } from 'react-bootstrap';
 import '../pages/css/Dashboard.css'; // Import the CSS file
 
 import CalculatorWidget from '../components/CalculatorWidget';
 
 const CalculatorPage = () => {
     return (
-            <div class="content">
-                <div className="container-fluid main-content">
-                    <h1 className="page-title">Calendar</h1>
+        <Container className="mt-5">
+          <h1 className="page-title">Calculator</h1>
 
-                    <div className="row">
-                        <div className="col">
-                            <CalculatorWidget />
-                        </div>
-                    </div>
-                </div>
+          <div className="row">
+            <div className="col">
+              <CalculatorWidget />
             </div>
+          </div>
+        </Container>
     );
 };
 
