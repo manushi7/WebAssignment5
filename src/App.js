@@ -20,8 +20,7 @@ const App = () => {
         <AuthenticationProvider>
           <Router>
             <Routes>
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/signup" element={<SignupPage />} />
+              <Route element={<Layout />}>
               <Route
                   path="/"
                   element={
@@ -30,7 +29,6 @@ const App = () => {
                       </RequireAuth>
                   }
               />
-              <Route element={<Layout />}>
                 <Route
                     path="/profile"
                     element={
@@ -64,6 +62,8 @@ const App = () => {
                     </RequireAuth>
                 } />
               </Route>
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/signup" element={<SignupPage />} />
             </Routes>
           </Router>
         </AuthenticationProvider>
