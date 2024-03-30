@@ -6,7 +6,7 @@ import ParkWidget from '../components/ParkWidget';
 
 function ThingsTodoPage() {
     return (
-        <Container className="mt-5">
+        <div className="content">
           <h1 className="page-title">Things to do in US parks</h1>
 
           <div className="row">
@@ -14,7 +14,7 @@ function ThingsTodoPage() {
               <ParkWidget />
             </div>
           </div>
-        </Container>
+        </div>
     );
 };
 

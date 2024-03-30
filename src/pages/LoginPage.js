@@ -34,7 +34,7 @@ const LoginPage = () => {
 
     try {
       await login( email, password);
-      navigate('/profile');
+      navigate('/');
     } catch (error) {
       setError('incorrect email or password');
       console.error('Error logging in:', error.message);

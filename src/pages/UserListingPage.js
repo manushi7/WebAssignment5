@@ -37,7 +37,7 @@ export default function UserListingPage() {
     }, []);
 
     return (
-        <Container className="mt-5">
+        <div className="content">
           <h2 className="page-title">User Listing</h2>
           <div className="row">
             <div className="col">
@@ -58,6 +58,6 @@ export default function UserListingPage() {
               </div>
             </div>
           </div>
-        </Container>
+        </div>
     );
 };
