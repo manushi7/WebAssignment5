@@ -7,7 +7,7 @@ import ParkWidget from '../components/ParkWidget';
 
 const DashboardPage = () => {
     return (
-            <div class="content">
+            <div className="content">
                 <div className="container-fluid main-content">
                     <h1 className="page-title">Dashboard</h1>
 
