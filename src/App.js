@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { AuthenticationProvider } from './context/auth/AuthenticationContext';
@@ -14,23 +13,24 @@ import SignupPage from './pages/SignupPage';
 import UserListingPage from './pages/UserListingPage';
 import CalendarPage from './pages/CalendarPage';
 import CalculatorPage from './pages/CalculatorPage';
+import ThingsTodoPage from './pages/ThingsToDoPage';
 
 const App = () => {
     return (
         <AuthenticationProvider>
           <Router>
             <Routes>
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/signup" element={<SignupPage />} />
+              <Route
+                  path="/"
+                  element={
+                      <RequireAuth>
+                        <DashboardPage />
+                      </RequireAuth>
+                  }
+              />
               <Route element={<Layout />}>
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/signup" element={<SignupPage />} />
-                <Route
-                    path="/"
-                    element={
-                        <RequireAuth>
-                          <DashboardPage />
-                        </RequireAuth>
-                    }
-                />
                 <Route
                     path="/profile"
                     element={
@@ -56,6 +56,11 @@ const App = () => {
                 <Route path="/calculator" element={
                     <RequireAuth>
                       <CalculatorPage />
+                    </RequireAuth>
+                } />
+                <Route path="/things-to-do" element={
+                    <RequireAuth>
+                      <ThingsTodoPage />
                     </RequireAuth>
                 } />
               </Route>

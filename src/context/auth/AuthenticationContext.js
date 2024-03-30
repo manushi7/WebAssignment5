@@ -1,4 +1,9 @@
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+    createUserWithEmailAndPassword,
+    getAuth,
+    signInWithEmailAndPassword,
+    signOut
+} from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from 'react';
 import { signUpUser } from '../../services/authService';
 
@@ -47,25 +52,23 @@ export const AuthenticationProvider = ({ children }) => {
         }
     };
     
-    //   // Method to sign out user
-    //   const logout = async () => {
-    //     try {
-    //       await auth.signOut();
-
-    // setAuthenticated(false)
-    //     } catch (error) {
-    //       console.error('Error signing out:', error.message);
-    //     }
-    //   };
+    // Method to sign out user
+    const logout = async () => {
+        try {
+            console.log('a something')
+            await signOut(auth);
+        } catch (error) {
+            console.error('Error signing out:', error.message);
+        }
+    };
 
     // Value object for the context provider
-
     const value = {
         user,
         loading,
         login,
         signup: signUpUser,
-        // logout,
+        logout,
     };
 
     // Return the context provider with the value
